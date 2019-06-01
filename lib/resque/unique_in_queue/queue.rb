@@ -64,8 +64,9 @@ module Resque
       end
 
       def cleanup(queue)
-        keys = redis.keys("#{Resque::UniqueInQueue.configuration&.unique_in_queue_key_base}:queue:#{queue}:job:*")
-        redis.del(*keys) if keys.any?
+        pattern = "#{Resque::UniqueInQueue.configuration&.unique_in_queue_key_base}:queue:#{queue}:job:*"
+        keys = redis.scan_each(match: pattern, count: 1_000_000).to_a
+        redis.del(keys) if keys.any?
       end
 
       private

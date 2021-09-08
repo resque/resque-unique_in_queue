@@ -23,7 +23,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'colorize', '>= 0.8'
   spec.add_runtime_dependency 'resque', '>= 1.2'
 
-  spec.add_development_dependency 'bundler', '~> 1.16'
+  spec.add_development_dependency 'bundler', '>= 2.2.10'
   spec.add_development_dependency 'byebug', '~> 10.0'
   spec.add_development_dependency 'fakeredis', '~> 0.7'
   spec.add_development_dependency 'minitest', '~> 5.11'

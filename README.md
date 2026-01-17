@@ -6,7 +6,7 @@
 | license                 |  [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT) |
 | download rank           |  [![Downloads Today](https://img.shields.io/gem/rd/resque-unique_in_queue.svg)](https://github.com/pboling/resque-unique_in_queue) |
 | version                 |  [![Version](https://img.shields.io/gem/v/resque-unique_in_queue.svg)](https://rubygems.org/gems/resque-unique_in_queue) |
-| code triage             |  [![Open Source Helpers](https://www.codetriage.com/pboling/resque-unique_in_queue/badges/users.svg)](https://www.codetriage.com/pboling/resque-unique_in_queue) |
+| code triage             |  [![Open Source Helpers](https://www.codetriage.com/resque/resque-unique_in_queue/badges/users.svg)](https://www.codetriage.com/resque/resque-unique_in_queue) |
 | homepage                |  [on Github.com][homepage], [on Railsbling.com][blogpage] |
 | documentation           |  [on RDoc.info][documentation] |
 | Spread ~♡ⓛⓞⓥⓔ♡~      |  [🌏](https://about.me/peter.boling), [👼](https://angel.co/peter-boling), [:shipit:](http://coderwall.com/pboling), [![Tweet Peter](https://img.shields.io/twitter/follow/galtzo.svg?style=social&label=Follow)](http://twitter.com/galtzo) |

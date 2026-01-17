@@ -6,10 +6,6 @@
 | license                 |  [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT) |
 | download rank           |  [![Downloads Today](https://img.shields.io/gem/rd/resque-unique_in_queue.svg)](https://github.com/pboling/resque-unique_in_queue) |
 | version                 |  [![Version](https://img.shields.io/gem/v/resque-unique_in_queue.svg)](https://rubygems.org/gems/resque-unique_in_queue) |
-| dependencies            |  [![Depfu](https://badges.depfu.com/badges/25c6e1e4c671926e9adea898f2df9a47/count.svg)](https://depfu.com/github/pboling/resque-unique_in_queue?project_id=2729) |
-| continuous integration  |  [![Build Status](https://travis-ci.org/pboling/resque-unique_in_queue.svg?branch=master)](https://travis-ci.org/pboling/resque-unique_in_queue) |
-| test coverage           |  [![Test Coverage](https://api.codeclimate.com/v1/badges/7520df3968eb146c8894/test_coverage)](https://codeclimate.com/github/pboling/resque-unique_in_queue/test_coverage) |
-| maintainability         |  [![Maintainability](https://api.codeclimate.com/v1/badges/7520df3968eb146c8894/maintainability)](https://codeclimate.com/github/pboling/resque-unique_in_queue/maintainability) |
 | code triage             |  [![Open Source Helpers](https://www.codetriage.com/pboling/resque-unique_in_queue/badges/users.svg)](https://www.codetriage.com/pboling/resque-unique_in_queue) |
 | homepage                |  [on Github.com][homepage], [on Railsbling.com][blogpage] |
 | documentation           |  [on RDoc.info][documentation] |

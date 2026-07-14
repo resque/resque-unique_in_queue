@@ -6,7 +6,6 @@ require 'resque/unique_in_queue/version'
 require 'digest/md5'
 
 # External Gems
-require 'colorized_string'
 require 'resque'
 
 # This Gem
@@ -23,7 +22,13 @@ require 'resque/unique_in_queue/configuration'
 #   Resque, Resque::Job, or Resque::Queue.
 module Resque
   module UniqueInQueue
-    PLUGIN_TAG = (ColorizedString['[R-UIQ] '].blue).freeze
+    # Wraps text in ANSI blue escape codes. Replaces the former `colorize`
+    # dependency; produces the exact sequence colorize's String#blue emitted.
+    def self.blue_text(text)
+      "\e[0;34;49m#{text}\e[0m"
+    end
+
+    PLUGIN_TAG = blue_text('[R-UIQ] ').freeze
 
     def log(message)
       configuration.logger&.send(configuration.log_level, message) if configuration.logger

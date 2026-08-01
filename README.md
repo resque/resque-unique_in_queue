@@ -21,6 +21,10 @@ I've summarized my thoughts in [this blog post](https://dev.to/galtzo/hostile-ta
 
 ## 🌻 Synopsis <a href="https://discord.gg/3qme4XHNKN"><img alt="Galtzo FLOSS Logo by Aboling0, CC BY-SA 4.0" src="https://logos.galtzo.com/assets/images/galtzo-floss/avatar-128px.svg" width="8%" align="right"/></a> <a href="https://ruby-toolbox.com"><img alt="ruby-lang Logo, Yukihiro Matsumoto, Ruby Visual Identity Team, CC BY-SA 2.5" src="https://logos.galtzo.com/assets/images/ruby-lang/avatar-128px.svg" width="8%" align="right"/></a>
 
+`resque-unique_in_queue` prevents duplicate Resque jobs from being enqueued in the same queue. A job including `Resque::Plugins::UniqueInQueue` is identified by its class and serialized arguments; matching enqueue attempts are ignored until its uniqueness key is released or expires.
+
+This is enqueue-time uniqueness. It does not prevent two workers from executing duplicate work that was already present in Redis; use `resque-unique_at_runtime` for that guarantee.
+
 ## 💡 Info you can shake a stick at
 
 | Tokens to Remember | [![Gem name][⛳️name-img]][⛳️gem-name] [![Gem namespace][⛳️namespace-img]][⛳️gem-namespace] |
@@ -118,6 +122,20 @@ gem install resque-unique_in_queue
 ```
 
 ## ⚙️ Configuration
+
+Configure application defaults before jobs are enqueued:
+
+```ruby
+Resque::UniqueInQueue.configure do |config|
+  config.lock_after_execution_period = 0
+  config.ttl = -1
+  config.unique_in_queue_key_base = "r-uiq"
+end
+```
+
+`lock_after_execution_period` keeps the key after a job leaves the queue; `0` removes it immediately. `ttl` is the Redis key expiry in seconds; `-1` leaves the key without an expiry. Jobs may override the first two settings with `@lock_after_execution_period` and `@ttl`.
+
+Keep `unique_in_queue_key_base` global for the application. Per-job key bases make cleanup and cross-queue inspection unreliable. Set `RESQUE_DEBUG=true` (or a value containing `queue`) to enable plugin debug logging.
 
 ## 🔧 Basic Usage
 

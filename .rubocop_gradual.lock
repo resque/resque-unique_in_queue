@@ -17,8 +17,5 @@
   ],
   "resque-unique_in_queue.gemspec:4123299533": [
     [165, 3, 39, "Gemspec/DependencyVersion: Dependency version specification is required.", 248795650]
-  ],
-  "spec/resque/unique_in_queue/version_spec.rb:2050676776": [
-    [7, 3, 472, "RSpec/ExampleLength: Example has too many lines. [6/5]", 2615636893]
   ]
 }

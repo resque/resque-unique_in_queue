@@ -621,7 +621,7 @@ files:
   ".structuredmerge/kettle-jem.yml":
     recipe: template_source_application_structuredmerge_kettle_jem_yml
     action: write
-    dest_sha256: 7d8b474cbef974133fc1fb6c260b0f8dabd6dc6c4481ca1993e7856349a1341e
+    dest_sha256: ac6d77a8651990200028aca49479c1bc4ce78b7ca6061fb93e6e8c393cfe9a0b
     input_fingerprint: 1e87f45a67a2dc2281e200beb7f8b8aa8fc64593da820c9e26d960ebf9d0245b
     template_sources:
     - ".structuredmerge/kettle-jem.yml.example"

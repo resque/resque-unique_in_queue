@@ -372,7 +372,7 @@ See [LICENSE.md][📄license] for the official copyright notice.
 
 - Copyright (c) 2013-2017 Tee Parham
 - Copyright (c) 2016 MaksMasalitin
-- Copyright (c) 2018, 2026 Peter Boling
+- Copyright (c) 2018, 2026 Peter H. Boling
 - Copyright (c) 2019 Daniel Cunha
 - Copyright (c) 2026 Max Lewis
 

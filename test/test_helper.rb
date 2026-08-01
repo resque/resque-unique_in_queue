@@ -9,7 +9,7 @@ require "fake_jobs"
 require "fakeredis/minitest"
 
 begin
-  require "pry-byebug"
+  require "debug"
 rescue LoadError
   # ignore
 end

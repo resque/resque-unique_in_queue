@@ -95,4 +95,14 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Security
 
-[Unreleased]: https://gitlab.com/resque/resque-unique_in_queue/-/compare/HEAD
+## [2.0.1] - 2018-11-15
+
+- TAG: [v2.0.1][2.0.1t]
+
+### Changed
+
+- Historical release notes are unavailable in this changelog.
+
+[Unreleased]: https://github.com/resque/resque-unique_in_queue/compare/v2.0.1...HEAD
+[2.0.1]: https://github.com/resque/resque-unique_in_queue/compare/5768fc8b5e3b164bf740286ee1ddbec2ea96797e...v2.0.1
+[2.0.1t]: https://github.com/resque/resque-unique_in_queue/releases/tag/v2.0.1

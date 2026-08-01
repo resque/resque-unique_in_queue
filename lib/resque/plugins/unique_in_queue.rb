@@ -26,8 +26,8 @@ module Resque
         # a hash containing string keys 'class' and 'args'
         def redis_key(payload)
           payload = Resque.decode(Resque.encode(payload))
-          job  = payload['class']
-          args = payload['args']
+          job = payload["class"]
+          args = payload["args"]
           args.map! do |arg|
             arg.is_a?(Hash) ? arg.sort : arg
           end
@@ -46,7 +46,7 @@ module Resque
         # end
         def lock_after_execution_period
           instance_variable_get(:@lock_after_execution_period) ||
-              instance_variable_set(:lock_after_execution_period, Resque::UniqueInQueue.configuration&.lock_after_execution_period)
+            instance_variable_set(:lock_after_execution_period, Resque::UniqueInQueue.configuration&.lock_after_execution_period)
         end
 
         # The default ttl of a locking key is -1 (forever).
@@ -59,7 +59,7 @@ module Resque
         # end
         def ttl
           instance_variable_get(:@ttl) ||
-              instance_variable_set(:ttl, Resque::UniqueInQueue.configuration&.ttl)
+            instance_variable_set(:ttl, Resque::UniqueInQueue.configuration&.ttl)
         end
 
         # Should not generally be overridden per each class because it wouldn't
@@ -68,7 +68,7 @@ module Resque
         #   and general cleanup of stray keys would be nearly impossible.
         def unique_in_queue_key_base
           instance_variable_get(:@unique_in_queue_key_base) ||
-              instance_variable_set(:@unique_in_queue_key_base, Resque::UniqueInQueue.configuration&.unique_in_queue_key_base)
+            instance_variable_set(:@unique_in_queue_key_base, Resque::UniqueInQueue.configuration&.unique_in_queue_key_base)
         end
       end
     end

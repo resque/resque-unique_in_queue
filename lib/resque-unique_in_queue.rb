@@ -1,19 +1,19 @@
 # frozen_string_literal: true
 
-require 'resque/unique_in_queue/version'
+require "resque/unique_in_queue/version"
 
 # Ruby Std Lib
-require 'digest/md5'
+require "digest/md5"
 
 # External Gems
-require 'resque'
+require "resque"
 
 # This Gem
-require 'resque/plugins/unique_in_queue'
-require 'resque/unique_in_queue/resque_ext/job'
-require 'resque/unique_in_queue/resque_ext/resque'
-require 'resque/unique_in_queue/queue'
-require 'resque/unique_in_queue/configuration'
+require "resque/plugins/unique_in_queue"
+require "resque/unique_in_queue/resque_ext/job"
+require "resque/unique_in_queue/resque_ext/resque"
+require "resque/unique_in_queue/queue"
+require "resque/unique_in_queue/configuration"
 
 # See lib/resque/plugins/unique_in_queue.rb for the actual plugin
 #
@@ -28,7 +28,7 @@ module Resque
       "\e[0;34;49m#{text}\e[0m"
     end
 
-    PLUGIN_TAG = blue_text('[R-UIQ] ').freeze
+    PLUGIN_TAG = blue_text("[R-UIQ] ").freeze
 
     def log(message)
       configuration.logger&.send(configuration.log_level, message) if configuration.logger
@@ -51,6 +51,6 @@ module Resque
     self.configuration = Configuration.instance # setup defaults
 
     module_function(:log,
-                    :debug)
+      :debug)
   end
 end

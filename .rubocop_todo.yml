@@ -29,7 +29,7 @@ Layout/DefEndAlignment:
     - 'lib/resque/unique_in_queue/queue.rb'
 
 # Offense count: 1
-Lint/HandleExceptions:
+Lint/SuppressedException:
   Exclude:
     - 'test/test_helper.rb'
 
@@ -51,7 +51,7 @@ Naming/FileName:
 # NamePrefixBlacklist: is_, has_, have_
 # NameWhitelist: is_a?
 # MethodDefinitionMacros: define_method, define_singleton_method
-Naming/PredicateName:
+Naming/PredicatePrefix:
   Exclude:
     - 'spec/**/*'
     - 'lib/resque/unique_in_queue/queue.rb'
@@ -59,7 +59,7 @@ Naming/PredicateName:
 # Offense count: 4
 # Configuration parameters: MinNameLength, AllowNamesEndingInNumbers, AllowedNames, ForbiddenNames.
 # AllowedNames: io, id, to, by, on, in, at, ip, db
-Naming/UncommunicativeMethodParamName:
+Naming/MethodParameterName:
   Exclude:
     - 'test/fake_jobs.rb'
 
@@ -87,5 +87,5 @@ Style/NumericPredicate:
 # Offense count: 26
 # Configuration parameters: AllowHeredoc, AllowURI, URISchemes, IgnoreCopDirectives, IgnoredPatterns.
 # URISchemes: http, https
-Metrics/LineLength:
+Layout/LineLength:
   Max: 116

@@ -10,7 +10,7 @@ module Resque
       return nil if before_hooks.any? { |result| result == false }
 
       result = Job.create(queue, klass, *args)
-      return nil if result == 'EXISTED'
+      return nil if result == "EXISTED"
 
       Plugin.after_enqueue_hooks(klass).each do |hook|
         klass.send(hook, *args)
@@ -24,7 +24,7 @@ module Resque
     end
 
     def enqueued_in?(queue, klass, *args)
-      item = { class: klass.to_s, args: args }
+      item = {class: klass.to_s, args: args}
       return nil unless Resque::UniqueInQueue::Queue.is_unique?(item)
 
       Resque::UniqueInQueue::Queue.queued?(queue, item)
@@ -35,7 +35,7 @@ module Resque
       Resque::UniqueInQueue::Queue.cleanup(queue)
     end
 
-    alias remove_queue_without_unique_in_queue_cleanup remove_queue
-    alias remove_queue remove_queue_with_unique_in_queue_cleanup
+    alias_method :remove_queue_without_unique_in_queue_cleanup, :remove_queue
+    alias_method :remove_queue, :remove_queue_with_unique_in_queue_cleanup
   end
 end

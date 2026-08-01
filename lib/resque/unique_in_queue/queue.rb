@@ -4,7 +4,7 @@ module Resque
       def queued?(queue, item)
         return false unless is_unique?(item)
 
-        redis.get(unique_key(queue, item)) == '1'
+        redis.get(unique_key(queue, item)) == "1"
       end
 
       def mark_queued(queue, item)
@@ -56,8 +56,8 @@ module Resque
 
         redis.lrange(redis_queue, 0, -1).each do |string|
           json = Resque.decode(string)
-          next unless json['class'] == klass
-          next if args.any? && json['args'] != args
+          next unless json["class"] == klass
+          next if args.any? && json["args"] != args
 
           Resque::UniqueInQueue::Queue.mark_unqueued(queue, json)
         end
@@ -76,7 +76,7 @@ module Resque
       end
 
       def item_class(item)
-        item[:class] || item['class']
+        item[:class] || item["class"]
       end
 
       def const_for(item)

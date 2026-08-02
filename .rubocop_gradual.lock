@@ -15,7 +15,7 @@
     [28, 34, 6, "Style/GlobalStdStream: Use `$stdout` instead of `STDOUT`.", 3356722952],
     [43, 7, 15, "Lint/DuplicateMethods: Method `Resque::UniqueInQueue::Configuration#debug_mode=` is defined at both lib/resque/unique_in_queue/configuration.rb:12 and lib/resque/unique_in_queue/configuration.rb:43.", 3724036658]
   ],
-  "resque-unique_in_queue.gemspec:4123299533": [
-    [165, 3, 39, "Gemspec/DependencyVersion: Dependency version specification is required.", 248795650]
+  "resque-unique_in_queue.gemspec:3212696593": [
+    [163, 3, 39, "Gemspec/DependencyVersion: Dependency version specification is required.", 248795650]
   ]
 }

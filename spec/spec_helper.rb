@@ -24,7 +24,7 @@ require "kettle/test/rspec"
 # `kettle/test/rspec` installs harness helpers documented in spec/README.md.
 
 # This library
-require "resque/unique_in_queue"
+require "resque-unique_in_queue"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

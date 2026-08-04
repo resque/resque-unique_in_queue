@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class FakeJob
   @queue = :normal
 end
@@ -27,7 +29,7 @@ class UniqueInQueueWithTtl
   @queue = :unique_with_ttl
   @ttl = 300
 
-  def self.perform(*_)
+  def self.perform(*)
   end
 end
 
@@ -37,6 +39,26 @@ class UniqueInQueueWithLock
   @queue = :unique_with_lock
   @lock_after_execution_period = 150
 
-  def self.perform(*_)
+  def self.perform(*)
+  end
+end
+
+class BeforeEnqueueVetoJob
+  @queue = :normal
+
+  def self.before_enqueue(*)
+    false
+  end
+end
+
+class HookedJob
+  @queue = :normal
+
+  def self.before_enqueue(*)
+    true
+  end
+
+  def self.after_enqueue(*)
+    true
   end
 end

@@ -6,19 +6,11 @@
     [34, 7, 84, "Style/SafeNavigation: Use safe navigation (`&.`) instead of checking if an object exists before calling the method.", 3761788843],
     [48, 7, 28, "ThreadSafety/ClassAndModuleAttributes: Avoid mutating class and module attributes.", 3570445562]
   ],
-  "lib/resque/plugins/unique_in_queue.rb:3600461222": [
-    [48, 11, 52, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 13149312],
-    [49, 13, 117, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 3294004169],
-    [61, 11, 28, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 1551552331],
-    [62, 13, 69, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 2346993353],
-    [70, 11, 49, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 195329408],
-    [71, 13, 112, "ThreadSafety/ClassInstanceVariable: Avoid class instance variables.", 1847657513]
-  ],
   "lib/resque/unique_in_queue/configuration.rb:2500134855": [
     [28, 34, 6, "Style/GlobalStdStream: Use `$stdout` instead of `STDOUT`.", 3356722952],
     [43, 7, 15, "Lint/DuplicateMethods: Method `Resque::UniqueInQueue::Configuration#debug_mode=` is defined at both lib/resque/unique_in_queue/configuration.rb:12 and lib/resque/unique_in_queue/configuration.rb:43.", 3724036658]
   ],
-  "resque-unique_in_queue.gemspec:123710065": [
+  "resque-unique_in_queue.gemspec:373526134": [
     [163, 3, 39, "Gemspec/DependencyVersion: Dependency version specification is required.", 248795650]
   ]
 }

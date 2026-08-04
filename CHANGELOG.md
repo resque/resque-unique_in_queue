@@ -94,6 +94,8 @@ Please file a bug if you notice a violation of semantic versioning.
 - kettle-jem-template-20260802-001 - Devcontainer JSON files now merge as JSONC,
   preserving comments and trailing commas during template updates.
 
+- Fix default uniqueness configuration loading on Ruby 4.
+
 ### Security
 
 ## [2.0.1] - 2018-11-15

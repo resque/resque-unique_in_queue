@@ -18,6 +18,8 @@ module Resque
       end
 
       module ClassMethods
+        # The plugin stores per-job configuration on the job class.
+        # rubocop:disable ThreadSafety/ClassInstanceVariable
         def unique_in_queue_redis_key(queue, item)
           "#{unique_in_queue_key_base}:queue:#{queue}:job:#{Resque::UniqueInQueue::Queue.const_for(item).redis_key(item)}"
         end
@@ -46,7 +48,7 @@ module Resque
         # end
         def lock_after_execution_period
           instance_variable_get(:@lock_after_execution_period) ||
-            instance_variable_set(:lock_after_execution_period, Resque::UniqueInQueue.configuration&.lock_after_execution_period)
+            instance_variable_set(:@lock_after_execution_period, Resque::UniqueInQueue.configuration&.lock_after_execution_period)
         end
 
         # The default ttl of a locking key is -1 (forever).
@@ -59,7 +61,7 @@ module Resque
         # end
         def ttl
           instance_variable_get(:@ttl) ||
-            instance_variable_set(:ttl, Resque::UniqueInQueue.configuration&.ttl)
+            instance_variable_set(:@ttl, Resque::UniqueInQueue.configuration&.ttl)
         end
 
         # Should not generally be overridden per each class because it wouldn't
@@ -70,6 +72,7 @@ module Resque
           instance_variable_get(:@unique_in_queue_key_base) ||
             instance_variable_set(:@unique_in_queue_key_base, Resque::UniqueInQueue.configuration&.unique_in_queue_key_base)
         end
+        # rubocop:enable ThreadSafety/ClassInstanceVariable
       end
     end
   end

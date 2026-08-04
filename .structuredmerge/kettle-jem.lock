@@ -670,7 +670,7 @@ files:
   CHANGELOG.md:
     recipe: template_source_application_CHANGELOG_md
     action: write
-    dest_sha256: f4fa1ef299330b935125f951244d2a25c62e0dae934033c92bfaf523bf012a76
+    dest_sha256: 684b3dd4bf3846254e0e398b90f70d070dd0d044f636c4a5fe2d090717923a2b
     input_fingerprint: bfeb9c0ac5b1d113d5fb5e3ce995f4c2217d28a8ae7c734b236f6ab75cfeda86
     template_sources:
     - CHANGELOG.md.example
@@ -753,7 +753,7 @@ files:
   Rakefile:
     recipe: template_source_application_Rakefile
     action: write
-    dest_sha256: 5635ee65b2957c0c4718090b615e0a9c4f38820e916a456ca551fa94c13089bd
+    dest_sha256: 7b15c4575c9375a97998b2d5a809461428fce1ecdca085ffe1ec9225fb28a870
     input_fingerprint: ac541c58ac9a23ce071b1d24ab875c1f6d3871456f906a1489d875e8c8611fdd
     template_sources:
     - Rakefile.example
@@ -1138,7 +1138,7 @@ files:
   spec/spec_helper.rb:
     recipe: template_source_application_spec_spec_helper_rb
     action: write
-    dest_sha256: 9f4f4992c2054ef08c95baf6e63b1902ebda074efb3cf80bc8b2bb5b333a1c25
+    dest_sha256: 789056858c340271edec64d64fc56fa5693ca855abf1bbf60ad5ed746552e009
     input_fingerprint: 678b66f4314a3c6bd83d3d1b6ff5534748cb0f71bdb68be8c8cb91027c659652
     template_sources:
     - spec/spec_helper.rb.example

@@ -2,7 +2,7 @@
 version: 1
 template_state:
   version: 7.1.0
-  applied_at: '2026-08-04'
+  applied_at: '2026-08-05'
   changelog_replay:
     last_entry_key: kettle-jem-template-20260802-001
     last_entry_date: '2026-08-02'
@@ -1097,7 +1097,7 @@ files:
     recipe: template_source_application_lib_resque_unique_in_queue_version_rb
     action: write
     dest_sha256: 7cf67b7fbb4bbb1eee3d8fd1fcb0576fd9a2dc04f47dc7e6ba8b5c645976b645
-    input_fingerprint: c9352e8ca3f46834b7808bd8170fd4e4a578fae2bad9055752e4bb34986afefc
+    input_fingerprint: 3d8e3e7e1f3336002cecffbd3b9dabc4a7f411c8c744e7f1a3e5ed4da9a336e8
     template_sources:
     - lib/gem/version.rb.example
   mise.toml:
@@ -1117,8 +1117,8 @@ files:
   resque-unique_in_queue.gemspec:
     recipe: template_source_application_resque_unique_in_queue_gemspec
     action: write
-    dest_sha256: 793a3d0dad37997ba1bb777de2e431cc46ff58f2f6c9d7bdc1cb0e68f61f462b
-    input_fingerprint: d1af836c4f5edce9b49fa679c29d607681a1200388b0a7e054139de39a9e2cfc
+    dest_sha256: d347f16fd337b977871f8f1147e2356f410c4cfcdd0965503d719323963e169a
+    input_fingerprint: 8ecf492e73be44dafba9dd999afbc4bf80746ac7ec5afd2f6d43ec51b7cd47e4
     template_sources:
     - gem.gemspec.example
   sig/resque/unique_in_queue.rbs:

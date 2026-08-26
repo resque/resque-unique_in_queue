@@ -81,7 +81,7 @@ module Resque
 
       def const_for(item)
         Resque.constantize(item_class(item))
-        end
+      end
 
       module_function :queued?, :mark_queued, :mark_unqueued, :unique_key
       module_function :is_unique?, :item_ttl, :lock_after_execution_period

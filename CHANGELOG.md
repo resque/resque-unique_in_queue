@@ -20,6 +20,25 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Added
 
+### Changed
+
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
+## [2.0.2] - 2026-08-26
+
+- TAG: [v2.0.2][2.0.2t]
+- COVERAGE: 93.23% -- 179/192 lines in 8 files
+- BRANCH COVERAGE: 77.59% -- 45/58 branches in 8 files
+- 52.73% documented
+
+### Added
+
 - kettle-jem-template-20260720-005 - README Support & Community links now
   include RubyForum.
 - kettle-jem-template-20260726-001 - Projects now include YARD lint
@@ -56,10 +75,6 @@ Please file a bug if you notice a violation of semantic versioning.
   - documentation (2)
   - other (4)
   - workflows (30)
-
-### Deprecated
-
-### Removed
 
 ### Fixed
 
@@ -109,8 +124,6 @@ Please file a bug if you notice a violation of semantic versioning.
 
 - Generated gemspec author metadata now includes all non-machine copyright holders.
 
-### Security
-
 ## [2.0.1] - 2018-11-15
 
 - TAG: [v2.0.1][2.0.1t]
@@ -119,6 +132,8 @@ Please file a bug if you notice a violation of semantic versioning.
 
 - Historical release notes are unavailable in this changelog.
 
-[Unreleased]: https://github.com/resque/resque-unique_in_queue/compare/v2.0.1...HEAD
+[Unreleased]: https://github.com/resque/resque-unique_in_queue/compare/v2.0.2...HEAD
+[2.0.2]: https://github.com/resque/resque-unique_in_queue/compare/v2.0.1...v2.0.2
+[2.0.2t]: https://github.com/resque/resque-unique_in_queue/releases/tag/v2.0.2
 [2.0.1]: https://github.com/resque/resque-unique_in_queue/compare/5768fc8b5e3b164bf740286ee1ddbec2ea96797e...v2.0.1
 [2.0.1t]: https://github.com/resque/resque-unique_in_queue/releases/tag/v2.0.1

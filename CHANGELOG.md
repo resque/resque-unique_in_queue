@@ -28,8 +28,6 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Fixed
 
-- Ruby 2.4 CI now provisions Redis for the legacy integration specs.
-
 ### Security
 
 ## [2.0.2] - 2026-08-26
@@ -125,6 +123,8 @@ Please file a bug if you notice a violation of semantic versioning.
 - Fix default uniqueness configuration loading on Ruby 4.
 
 - Generated gemspec author metadata now includes all non-machine copyright holders.
+
+- Ruby 2.4 CI now provisions Redis for the legacy integration specs.
 
 ## [2.0.1] - 2018-11-15
 

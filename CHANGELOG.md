@@ -107,6 +107,8 @@ Please file a bug if you notice a violation of semantic versioning.
 
 - Fix default uniqueness configuration loading on Ruby 4.
 
+- Generated gemspec author metadata now includes all non-machine copyright holders.
+
 ### Security
 
 ## [2.0.1] - 2018-11-15

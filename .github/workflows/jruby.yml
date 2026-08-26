@@ -1,21 +1,4 @@
----
-# Lock/Unlock Deps Pattern
-#
-# Two often conflicting goals resolved!
-#
-#  - unlocked_deps.yml
-#    - All runtime & dev dependencies, but does not have a `gemfiles/*.gemfile.lock` committed
-#    - Uses an Appraisal2 "unlocked_deps" gemfile, and the current MRI Ruby release
-#    - Know when new dependency releases will break local dev with unlocked dependencies
-#    - Broken workflow indicates that new releases of dependencies may not work
-#
-#  - locked_deps.yml
-#    - All runtime & dev dependencies, and has a `Gemfile.lock` committed
-#    - Uses the project's main Gemfile, and the current MRI Ruby release
-#    - Matches what contributors and maintainers use locally for development
-#    - Broken workflow indicates that a new contributor will have a bad time
-#
-name: Deps Unlocked
+name: Current JRuby
 
 permissions:
   contents: read
@@ -44,10 +27,10 @@ concurrency:
 
 jobs:
   test:
-    if: "github.event_name != 'push' || (!contains(github.event.head_commit.message, '[ci skip]') && !contains(github.event.head_commit.message, '[skip ci]'))"
-    name: Default rake task w/ unlocked deps ${{ matrix.name_extra || '' }}
+    if: "(github.event_name != 'push' || (!contains(github.event.head_commit.message, '[ci skip]') && !contains(github.event.head_commit.message, '[skip ci]'))) && (github.event_name != 'pull_request' || startsWith(github.head_ref, 'engines/') || startsWith(github.head_ref, 'jruby/') || startsWith(github.head_ref, 'feature/release'))"
+    name: Specs ${{ matrix.ruby }}@${{ matrix.appraisal }}
     runs-on: ubuntu-latest
-    # The default rake task includes the legacy integration specs.
+    # Legacy specs exercise Resque through a real Redis server.
     services:
       redis:
         image: redis:7
@@ -64,20 +47,23 @@ jobs:
     strategy:
       matrix:
         include:
-          # Ruby <whichever version is current, e.g., 3.4 as of 2025-07-12>
-          - ruby: "ruby"
-            appraisal: "unlocked_deps"
-            exec_cmd: "rake"
-            rubygems: latest
-            bundler: latest
+          # jruby-10.1 (targets Ruby 4.0 compatibility)
+          - ruby: "jruby"
+            appraisal: "current"
+            exec_cmd: "kettle-test"
+            rubygems: default
+            bundler: default
+            experimental: true
 
     steps:
       - name: Checkout
+        if: ${{ !env.ACT }}
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
 
       - name: Setup Ruby & RubyGems
+        if: ${{ !env.ACT }}
         uses: appraisal-rb/setup-ruby-flash@925395edf973d2dc0a629919f407f3547a03d4b5 # v2.1
         with:
           ruby-version: ${{ matrix.ruby }}
@@ -89,6 +75,7 @@ jobs:
 
       - name: "[Attempt 1] Appraisal for ${{ matrix.ruby }}@${{ matrix.appraisal }}"
         id: bundleAppraisalAttempt1
+        if: ${{ !env.ACT }}
         run: bundle exec appraisal ${{ matrix.appraisal }} install
         # Continue to the next step on failure
         continue-on-error: true
@@ -97,8 +84,19 @@ jobs:
       - name: "[Attempt 2] Appraisal for ${{ matrix.ruby }}@${{ matrix.appraisal }}"
         id: bundleAppraisalAttempt2
         # If bundleAppraisalAttempt1 failed, try again here; Otherwise skip.
-        if: ${{ steps.bundleAppraisalAttempt1.outcome == 'failure' }}
+        if: ${{ steps.bundleAppraisalAttempt1.outcome == 'failure' && !env.ACT }}
         run: bundle exec appraisal ${{ matrix.appraisal }} install
 
-      - name: Run ${{ matrix.exec_cmd }} on ${{ matrix.ruby }}@${{ matrix.appraisal }}
+      - name: Restore RSpec status log
+        if: "${{!env.ACT}}"
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: .rspec_status
+          key: rspec-status-jruby-${{matrix.ruby}}-${{matrix.appraisal}}-${{hashFiles('**/Gemfile.lock','Appraisal.root.gemfile','gemfiles/**/*.gemfile')}}-${{github.run_id}}-${{github.run_attempt}}
+          restore-keys: |
+            rspec-status-jruby-${{matrix.ruby}}-${{matrix.appraisal}}-${{hashFiles('**/Gemfile.lock','Appraisal.root.gemfile','gemfiles/**/*.gemfile')}}-
+            rspec-status-jruby-${{matrix.ruby}}-${{matrix.appraisal}}-
+
+      - name: Tests for ${{ matrix.ruby }} via ${{ matrix.exec_cmd }}
+        if: ${{ !env.ACT }}
         run: bundle exec appraisal ${{ matrix.appraisal }} bundle exec ${{ matrix.exec_cmd }}

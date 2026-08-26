@@ -1,7 +1,4 @@
 {
-  "gemfiles/modular/templating.gemfile:3018447732": [
-    [14, 3, 47, "Bundler/DuplicatedGem: Gem `tree_sitter_language_pack` requirements already given on line 10 of the Gemfile.", 3843603197]
-  ],
   "lib/resque-unique_in_queue.rb:4016263468": [
     [34, 7, 84, "Style/SafeNavigation: Use safe navigation (`&.`) instead of checking if an object exists before calling the method.", 3761788843],
     [48, 7, 28, "ThreadSafety/ClassAndModuleAttributes: Avoid mutating class and module attributes.", 3570445562]
@@ -10,7 +7,7 @@
     [28, 34, 6, "Style/GlobalStdStream: Use `$stdout` instead of `STDOUT`.", 3356722952],
     [43, 7, 15, "Lint/DuplicateMethods: Method `Resque::UniqueInQueue::Configuration#debug_mode=` is defined at both lib/resque/unique_in_queue/configuration.rb:12 and lib/resque/unique_in_queue/configuration.rb:43.", 3724036658]
   ],
-  "resque-unique_in_queue.gemspec:373526134": [
+  "resque-unique_in_queue.gemspec:760321819": [
     [163, 3, 39, "Gemspec/DependencyVersion: Dependency version specification is required.", 248795650]
   ]
 }

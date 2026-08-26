@@ -507,7 +507,11 @@ patterns:
   - path: "certs/**"
     strategy: raw_copy
   - path: ".github/workflows/**"
-    strategy: accept_template
+    # The legacy integration specs require Redis. Merge template updates so
+    # this repository-specific service configuration survives re-templating.
+    strategy: merge
+    preference: template
+    add_template_only_nodes: true
 
 # Per-file configuration (nested directory structure)
 # Only files that need overrides belong here. Everything else defaults to merge.

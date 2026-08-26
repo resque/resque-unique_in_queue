@@ -75,7 +75,7 @@ template_state:
     ".rubocop_rspec.yml.example": 288ad75e7eb14d87d80fafe6f7272217be5c57547536ee56c780a7d10ac7ec74
     ".simplecov.example": 222f2e6ce8cf089c70a21f0f5e5423d4bd59a96fdb2ce7754b0fb3d6f430c229
     ".structuredmerge/git-drivers.toml.example": 9d241a44c9edffcdbd3da018fa188a238089c3d1635040924df594a6929a4f97
-    ".structuredmerge/kettle-jem.yml.example": ebcefa7eb4b6c695ce6c0db7773ae37aad0719883e12d407313c8bf31a0a72a3
+    ".structuredmerge/kettle-jem.yml.example": 49b33325245316b003014a1215095fb940dba4db2ed86a789738adc3c9b48056
     ".yard-lint.yml.example": 90def46867c9436b4e177c47d91fc8165f4602e335715aecc39f5587ae20b55b
     ".yardignore.example": 821f453c609df7d46145d675424b39dfbe6dfdca8edac5f367b85fff48502455
     ".yardopts.example": 6fd6f2701713096a8a9ea095c213bbc68eeef37797c4754d97837e3229a3a5f6
@@ -738,12 +738,6 @@ files:
     input_fingerprint: dea5be0290c00693cf98bf3e42d188cb5fd050e19fc6953c801bb2ded8a0d1a0
     template_sources:
     - README.md.example
-  REEK:
-    recipe: template_source_application_REEK
-    action: write
-    input_fingerprint: eeab5815153786eb92cd046e87e1120f16ed59205b6a93737988742e38b9adbe
-    template_sources:
-    - REEK
   RUBOCOP.md:
     recipe: template_source_application_RUBOCOP_md
     action: write
@@ -1125,8 +1119,8 @@ files:
   resque-unique_in_queue.gemspec:
     recipe: template_source_application_resque_unique_in_queue_gemspec
     action: write
-    dest_sha256: 8ca184889d8e41f4eb7ae391ce2972e9c48ece834802b953581493cacdf0facf
-    input_fingerprint: 17d7240edf27b7a95c247f90dac74beecf8d9ab2f7a666db91508d0855e643bb
+    dest_sha256: f493bd950fe8aeef7ce6836ee90a473bddda5c3117f3f691d767e9532708037c
+    input_fingerprint: f19f78f0989b972a32ef8125d85a3b72a6b1404fc37b66653f1aee3e7a751f41
     template_sources:
     - gem.gemspec.example
   sig/resque/unique_in_queue.rbs:

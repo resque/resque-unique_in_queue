@@ -28,8 +28,6 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Fixed
 
-- Alternate-engine appraisal gemfiles cap multi_json below 1.20 for Fiber API compatibility.
-
 ### Security
 
 ## [2.0.2] - 2026-08-26
@@ -127,6 +125,8 @@ Please file a bug if you notice a violation of semantic versioning.
 - Generated gemspec author metadata now includes all non-machine copyright holders.
 
 - Ruby 2.4 CI now provisions Redis for the legacy integration specs.
+
+- Alternate-engine appraisal gemfiles cap multi_json below 1.20 for Fiber API compatibility.
 
 ## [2.0.1] - 2018-11-15
 

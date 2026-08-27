@@ -9,8 +9,9 @@ module Resque
 
       include Singleton
 
-      attr_accessor :debug_mode,
-        :lock_after_execution_period,
+      attr_reader :debug_mode
+
+      attr_accessor :lock_after_execution_period,
         :log_level,
         :logger,
         :ttl,
@@ -25,7 +26,7 @@ module Resque
         @unique_in_queue_key_base = DEFAULT_UNIQUE_IN_QUEUE_KEY_BASE
         if @debug_mode
           # Make sure there is a logger when in debug_mode
-          @logger ||= Logger.new(STDOUT)
+          @logger ||= Logger.new($stdout)
         end
       end
 

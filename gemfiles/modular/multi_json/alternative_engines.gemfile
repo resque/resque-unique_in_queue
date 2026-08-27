@@ -7,3 +7,10 @@
 if %w[jruby truffleruby].include?(RUBY_ENGINE)
   gem "multi_json", "< 1.20"
 end
+
+# TruffleRuby 23.1 reports Ruby 3.2 compatibility but cannot parse the
+# anonymous forwarding syntax used by connection_pool 3.0. Keep only this
+# appraisal on the last compatible connection_pool line.
+if RUBY_ENGINE == "truffleruby" && RUBY_ENGINE_VERSION.start_with?("23.1")
+  gem "connection_pool", "< 3"
+end

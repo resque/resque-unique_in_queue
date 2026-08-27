@@ -31,7 +31,7 @@ module Resque
     PLUGIN_TAG = blue_text("[R-UIQ] ").freeze
 
     def log(message)
-      configuration.logger&.send(configuration.log_level, message) if configuration.logger
+      configuration.logger&.send(configuration.log_level, message)
     end
 
     def debug(message)
@@ -45,7 +45,10 @@ module Resque
 
     #### CONFIG ####
     class << self
+      # The plugin exposes one replaceable configuration object by design.
+      # rubocop:disable ThreadSafety/ClassAndModuleAttributes
       attr_accessor :configuration
+      # rubocop:enable ThreadSafety/ClassAndModuleAttributes
     end
 
     self.configuration = Configuration.instance # setup defaults

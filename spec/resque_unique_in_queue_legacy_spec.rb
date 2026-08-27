@@ -65,12 +65,11 @@ RSpec.describe "resque-unique_in_queue legacy behavior" do
     2.times { Resque.enqueue(FailingUniqueInQueue, "foo") }
     expect(Resque.size(:unique)).to eq(1)
 
-    # Queue cleanup occurs while the worker reserves the job. Keep this legacy
-    # integration example independent of Resque's optional fork implementation,
-    # which is unavailable or unstable on some supported engines.
+    # Resque 3.0's zero-interval loop calls Float#clamp with a nil bound,
+    # which raises on supported TruffleRuby versions before reservation.
     worker = Resque::Worker.new(:unique)
     worker.instance_variable_set(:@fork_per_job, false)
-    worker.work(0)
+    worker.work_one_job
     expect(Resque.size(:unique)).to eq(0)
 
     2.times { Resque.enqueue(FailingUniqueInQueue, "foo") }

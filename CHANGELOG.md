@@ -30,6 +30,8 @@ Please file a bug if you notice a violation of semantic versioning.
 
 - Keep optional development tools out of gemspec metadata so alternate-engine appraisals do not install incompatible native extensions.
 
+- Keep legacy exception-cleanup coverage independent of Resque's optional worker forking behavior across supported engines.
+
 ### Security
 
 ## [2.0.2] - 2026-08-26

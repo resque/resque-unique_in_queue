@@ -28,13 +28,9 @@ Please file a bug if you notice a violation of semantic versioning.
 
 ### Fixed
 
-- Keep optional development tools out of gemspec metadata so alternate-engine appraisals do not install incompatible native extensions.
-
-- Keep legacy exception-cleanup coverage independent of Resque's optional worker forking behavior across supported engines.
-
 ### Security
 
-## [2.0.2] - 2026-08-26
+## [2.0.2] - 2026-08-27
 
 - TAG: [v2.0.2][2.0.2t]
 - COVERAGE: 93.23% -- 179/192 lines in 8 files
@@ -131,6 +127,10 @@ Please file a bug if you notice a violation of semantic versioning.
 - Ruby 2.4 CI now provisions Redis for the legacy integration specs.
 
 - Alternate-engine appraisal gemfiles cap multi_json below 1.20 for Fiber API compatibility.
+
+- Keep optional development tools out of gemspec metadata so alternate-engine appraisals do not install incompatible native extensions.
+
+- Keep legacy exception-cleanup coverage independent of Resque's optional worker forking behavior across supported engines.
 
 ## [2.0.1] - 2018-11-15
 

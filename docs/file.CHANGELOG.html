@@ -84,8 +84,8 @@ Please file a bug if you notice a violation of semantic versioning.</p>
 
 <h3 id="security">Security</h3>
 
-<h2 id="202---2026-08-26">
-<a href="https://github.com/resque/resque-unique_in_queue/compare/v2.0.1...v2.0.2">2.0.2</a> - 2026-08-26</h2>
+<h2 id="202---2026-08-27">
+<a href="https://github.com/resque/resque-unique_in_queue/compare/v2.0.1...v2.0.2">2.0.2</a> - 2026-08-27</h2>
 
 <ul>
   <li>TAG: <a href="https://github.com/resque/resque-unique_in_queue/releases/tag/v2.0.2">v2.0.2</a>
@@ -204,7 +204,13 @@ preserving comments and trailing commas during template updates.</p>
   <li>
     <p>Ruby 2.4 CI now provisions Redis for the legacy integration specs.</p>
   </li>
-  <li>Alternate-engine appraisal gemfiles cap multi_json below 1.20 for Fiber API compatibility.</li>
+  <li>
+    <p>Alternate-engine appraisal gemfiles cap multi_json below 1.20 for Fiber API compatibility.</p>
+  </li>
+  <li>
+    <p>Keep optional development tools out of gemspec metadata so alternate-engine appraisals do not install incompatible native extensions.</p>
+  </li>
+  <li>Keep legacy exception-cleanup coverage independent of Resque’s optional worker forking behavior across supported engines.</li>
 </ul>
 
 <h2 id="201---2018-11-15">

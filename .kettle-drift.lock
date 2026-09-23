@@ -1,0 +1,146 @@
+{
+  "# Legacy specs exercise Resque through a real Redis server.\nservices:": [
+    {
+      "file": ".github/workflows/dep-heads.yml",
+      "lines": [
+        34,
+        119,
+        203
+      ]
+    },
+    {
+      "file": ".github/workflows/heads.yml",
+      "lines": [
+        33,
+        109,
+        180
+      ]
+    }
+  ],
+  "- 6379:6379\noptions: >-": [
+    {
+      "file": ".github/workflows/dep-heads.yml",
+      "lines": [
+        39,
+        124,
+        208
+      ]
+    },
+    {
+      "file": ".github/workflows/heads.yml",
+      "lines": [
+        38,
+        114,
+        185
+      ]
+    }
+  ],
+  "--health-cmd \"redis-cli ping\"\n--health-interval 10s": [
+    {
+      "file": ".github/workflows/dep-heads.yml",
+      "lines": [
+        41,
+        126,
+        210
+      ]
+    },
+    {
+      "file": ".github/workflows/heads.yml",
+      "lines": [
+        40,
+        116,
+        187
+      ]
+    }
+  ],
+  "--health-interval 10s\n--health-timeout 5s": [
+    {
+      "file": ".github/workflows/dep-heads.yml",
+      "lines": [
+        42,
+        127,
+        211
+      ]
+    },
+    {
+      "file": ".github/workflows/heads.yml",
+      "lines": [
+        41,
+        117,
+        188
+      ]
+    }
+  ],
+  "--health-retries 5\ncontinue-on-error: ${{ matrix.experimental || endsWith(matrix.ruby, 'head') }}": [
+    {
+      "file": ".github/workflows/dep-heads.yml",
+      "lines": [
+        44,
+        129,
+        213
+      ]
+    },
+    {
+      "file": ".github/workflows/heads.yml",
+      "lines": [
+        43,
+        119,
+        190
+      ]
+    }
+  ],
+  "--health-timeout 5s\n--health-retries 5": [
+    {
+      "file": ".github/workflows/dep-heads.yml",
+      "lines": [
+        43,
+        128,
+        212
+      ]
+    },
+    {
+      "file": ".github/workflows/heads.yml",
+      "lines": [
+        42,
+        118,
+        189
+      ]
+    }
+  ],
+  "options: >-\n--health-cmd \"redis-cli ping\"": [
+    {
+      "file": ".github/workflows/dep-heads.yml",
+      "lines": [
+        40,
+        125,
+        209
+      ]
+    },
+    {
+      "file": ".github/workflows/heads.yml",
+      "lines": [
+        39,
+        115,
+        186
+      ]
+    }
+  ],
+  "runs-on: ubuntu-latest\n# Legacy specs exercise Resque through a real Redis server.": [
+    {
+      "file": ".github/workflows/dep-heads.yml",
+      "lines": [
+        33,
+        118,
+        202
+      ]
+    },
+    {
+      "file": ".github/workflows/heads.yml",
+      "lines": [
+        32,
+        108,
+        179
+      ]
+    }
+  ]
+}
